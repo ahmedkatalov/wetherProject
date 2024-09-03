@@ -15,7 +15,7 @@ export class Weather {
     async getFetch(city) { 
         const apiUrl = "4e995d2369a369fb432652325bf7768f"; 
         const weatherApi = `https://api.openweathermap.org/data/2.5/weather?units=metric&q=${city}&appid=${apiUrl}`; //  URL
-        const response = await fetch(weatherApi);
+        const response = await fetch(`https://cors-anywhere.herokuapp.com/${weatherApi}`);
         let data = await response.json();
 
         if (data.cod === '404') { 
