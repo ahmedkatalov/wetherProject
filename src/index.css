@@ -1,0 +1,71 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+#root{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    max-width:  100%;
+    height: 100vh;
+    background-color: rgb(29, 29, 29);
+}
+
+.conatiner{
+    padding: 10px;
+    max-width: 350px;
+    background-color: rgb(165, 165, 165);
+    border-radius: 6px;
+    height: 400px;
+    text-align: center;
+}
+
+
+#weatherValue{
+    height: 30px;
+    border: 0cap;
+    padding: 5px;
+
+}
+
+#weatherTemp{
+    color: #000000;
+    margin-top: 15px;
+}
+
+#weatherState{
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+
+#titleWeather{
+    color: #000000;
+}
+
+#weatherButton{
+    width: 100px;
+    height: 30px;
+    border: 0cap;
+    background-color: rgb(250, 192, 3);
+    color: #000000;
+    border-radius: 5px;
+}
+
+.windTitle img {
+    width: 10px;
+    height: 10px;
+}
+
+#additional-temp{
+    color: #000000;
+    font-size: 20px;
+}
+
+#windTitle{
+    color: #000000;
+    margin-top: 10px;
+}
