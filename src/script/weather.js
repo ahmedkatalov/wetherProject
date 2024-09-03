@@ -1,3 +1,5 @@
+
+
 export class Weather {
     constructor() {
         this.render();
@@ -13,12 +15,11 @@ export class Weather {
     }
 
     async getFetch(city) { 
-        const apiUrl = "4e995d2369a369fb432652325bf7768f"; 
-        const weatherApi = `https://api.openweathermap.org/data/2.5/weather?units=metric&q=${city}&appid=${apiUrl}`; //  URL
-        const response = await fetch(`https://cors-anywhere.herokuapp.com/${weatherApi}`);
+        const weatherApi = `https://api.openweathermap.org/data/2.5/weather?units=metric&q=${city}&appid=${process.env.WEATHER_API_KEY}`; //  URL
+        const response = await fetch(weatherApi);
         let data = await response.json();
 
-        if (data.cod === '404') { 
+        if (!response.ok) { 
             document.getElementById("titleWeather").innerHTML = "Извините, такого города в базе данных нет.";
             document.getElementById("weatherTemp").innerHTML = "";
             document.getElementById("additional-temp").innerHTML = "";
@@ -27,7 +28,6 @@ export class Weather {
             document.getElementById("windTitle").innerHTML = "";
         } else {
             console.log(data);
-
             document.getElementById("titleWeather").innerHTML = data.name
             document.getElementById("weatherTemp").innerHTML = `${Math.floor( data.main.temp)} &deg;C`
             document.getElementById("additional-temp").innerHTML = ` Ощущается как ${Math.floor( data.main.feels_like)} &deg;C`
